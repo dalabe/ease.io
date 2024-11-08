@@ -418,7 +418,6 @@ obj/
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-.idea/.idea.Matterhorn
 
 # AWS User-specific
 .idea/**/aws.xml
@@ -774,8 +773,4 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/csharp,visualstudio,macos,windows,linux,dotnetcore,jetbrains
 
 # Act
-.secrets
-Matterhorn.Testing/LoadTests/500-user-test
-Matterhorn.Testing/LoadTests/1500-users-test
-Matterhorn.Testing/LoadTests/500-user-test-results
-Matterhorn.Testing/LoadTests/1500-user-test-results
+
