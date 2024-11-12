@@ -4,6 +4,6 @@ namespace Ease.Data
 {
     public class DataContext(DbContextOptions<DataContext> options): DbContext(options)
     {
-        public DbSet<EasyMetadata> Metadata { get; set; }
+        public DbSet<EasyMetadata> EasyMetadata { get; set; }
     }
 }
