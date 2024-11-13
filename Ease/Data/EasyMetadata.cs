@@ -9,6 +9,6 @@ namespace Ease.Data
         [Key]
         public string? Guid { get; set; }
         public DateTimeOffset? Expires { get; set; }
-        public string User { get; set; }
+        public string? User { get; set; }
     }
 }

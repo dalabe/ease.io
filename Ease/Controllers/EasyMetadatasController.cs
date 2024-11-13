@@ -45,13 +45,18 @@ namespace Ease.Controllers
         // PUT: api/EasyMetadatas/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutEasyMetadata(string id, EasyMetadata easyMetadata)
+        public async Task<IActionResult> PutEasyMetadata(string id, EasyMetadata updatedEasyMetadata)
         {
-            if (id != easyMetadata.Guid)
+            if (updatedEasyMetadata.Expires == null || updatedEasyMetadata.Expires == DateTime.MinValue)
             {
                 return BadRequest();
             }
-
+            var easyMetadata = await _context.EasyMetadata.FindAsync(id);
+            if (easyMetadata == null)
+            {
+                return NotFound();
+            }
+            easyMetadata.Expires = updatedEasyMetadata.Expires;
             _context.Entry(easyMetadata).State = EntityState.Modified;
 
             try
