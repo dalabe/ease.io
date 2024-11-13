@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Ease.Data;
+using Ease.Services;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Ease.Controllers
@@ -34,7 +35,7 @@ namespace Ease.Controllers
         {
             var easyMetadata = await _context.EasyMetadata.FindAsync(id);
 
-            if (easyMetadata == null)
+            if (easyMetadata == null || !Utils.IsValidGuid(id))
             {
                 return NotFound();
             }
